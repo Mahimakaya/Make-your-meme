@@ -1,91 +1,71 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="js/jquery.js"></script>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script src="js/jquery.js"></script>
+
   <style>
-  *{
-    border:0;
-    margin:0; 
-  }
-  body{
-    min-width: 360px;
-  }
-   .container{
-     min-width:300px;
-   }
-  .navbar{
-    min-width:300px
-  }
+    * {
+      border: 0;
+      margin: 0;
+    }
 
+    body {
+      min-width: 360px;
+    }
+
+    .container {
+      min-width: 300px;
+    }
+
+    .navbar {
+      min-width: 300px
+    }
   </style>
-  <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
-        <a class="navbar-brand" href="home.php">Memegen</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse float right" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="home.php">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="login.php">Login</a>
-            <a class="nav-item nav-link" href="signup.php">Favorites</a>
-          </div>
-        </div>
-      </nav>
-    
-<div class="container d-flex flex-column align-items-center justify-content-around p-4">
-  <h3>Create your own Memes</h3>
-  <label class="p-2">Top text</label>
-  <input type="text" class="form-control" id="top-text" placeholder="Enter top text">
-  <label class="p-2">Bottom text</label>
-  <input type="text" class="form-control" id="bot-text" placeholder="Enter bottom text">
-  <p class="p-2">
-    <input type="file" id="img" name="image" accept="image/*">
-    <input type="number" id="helper" value="0" style="display:none">
-  </p>
-  <div class="d-flex align-items-center justify-content-center flex-wrap">
-    <button class="btn btn-primary m-2" id="btn">Create</button>
-    <button class="btn btn-primary m-2" id="rand">Random Image</button>
-    <button class="btn btn-primary m-2" id="add" onclick="download_image()">Download</button>
+<body>
+  <nav class="navbar navbar-light bg-info">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="meme.html">MemeGen</a>
+    </div>
+  </nav>
+  <div class="container d-flex flex-column align-items-center justify-content-around p-4">
+    <h3>Create your own Memes</h3>
+    <label class="p-2">Top text</label>
+    <input type="text" class="form-control" id="top-text" placeholder="Enter top text">
+    <label class="p-2">Bottom text</label>
+    <input type="text" class="form-control" id="bot-text" placeholder="Enter bottom text">
+    <p class="p-2">
+      <input type="file" id="img" name="image" accept="image/*">
+      <input type="number" id="helper" value="0" style="display:none">
+    </p>
+    <div class="d-flex align-items-center justify-content-center flex-wrap">
+      <button class="btn btn-primary m-2" id="btn">Create</button>
+      <button class="btn btn-primary m-2" id="rand">Random Image</button>
+      <button class="btn btn-primary m-2" id="add" onclick="download_image()">Download</button>
+    </div>
+    <div style="padding-top:20px;">
+      <img src="" id="myPicture" value="0" alt="preview"
+        style="display:none;width:200px;min-width:100%;max-height:300px">
+      <canvas id="canvas" value="canvas" style="max-width:400px;min-width:100%;height:auto"></canvas>
+    </div>
   </div>
-  <div style="padding-top:20px;">
-  <img src="" id="myPicture" value="0" alt="preview" style="display:none;width:200px;min-width:100%;max-height:300px">
-    <canvas id="canvas" value="canvas" style="max-width:400px;min-width:100%;height:auto"></canvas>
-  </div>
-</div>
 </body>
 
 <script src="js/script.js"></script>
 
 </head>
 </html>
-
-<!--
-
-    createBtn.addEventListener('click', function () {
-      let reader = new FileReader();
-      reader.onload = function () {
-        let img = new Image;
-        img.src = reader.result;
-        img.onload = function () {
-          create(img, toptextInput.value, btmtextInput.value);
-        }
-      };
-      if (imageInput.files[0]) {
-        reader.readAsDataURL(imageInput.files[0]);
-      }
-      else {
-        alert("Select image");
-      }
-    });
-  }
-  text();
--->
